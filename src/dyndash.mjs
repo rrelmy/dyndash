@@ -6,21 +6,23 @@ import _ from "lodash";
  * @returns {Function}
  */
 export default async function dyndash(args, expectedResult) {
-  const methods = [
-    _.uniq,
-    _.camelCase,
-    _.kebabCase,
-    _.lowerCase,
-    _.snakeCase,
-    _.startCase,
-    _.upperCase,
-  ];
+  const methodNames = Object.keys(_).filter(
+    (name) => typeof _[name] === "function"
+  );
 
   return Promise.any(
-    methods.map((method) => {
+    methodNames.map((name) => {
+      const method = _[name];
       return new Promise((resolve, reject) => {
-        if (_.isEqual(method.apply(null, args), expectedResult)) {
-          resolve(method);
+        try {
+          if (
+            _.isEqual(method.apply(null, _.cloneDeep(args)), expectedResult)
+          ) {
+            // console.info("Selected ", name);
+            return resolve(method);
+          }
+        } catch (e) {
+          // We don't case
         }
 
         reject("Didn't get expected result");

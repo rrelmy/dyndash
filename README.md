@@ -1,6 +1,8 @@
 # dyndash
 You never have to search for the correct lodash method again. Just tell dyndash what you want to do and it will select the right method for you.
 
+Requirements: Node 15+
+
 ## Usage
 
 ``` js
