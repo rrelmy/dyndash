@@ -22,7 +22,7 @@ export default async function dyndash(args, expectedResult) {
             return resolve(method);
           }
         } catch (e) {
-          // We don't case
+          // We don't care
         }
 
         reject("Didn't get expected result");
