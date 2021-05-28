@@ -1,0 +1,25 @@
+{
+  "name": "dyndash",
+  "version": "1.0.0",
+  "description": "Dynamically select the right lodash method (joke)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrelmy/dyndash.git"
+  },
+  "keywords": [
+    "lodash"
+  ],
+  "author": "Rémy Böhler",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/rrelmy/dyndash/issues"
+  },
+  "homepage": "https://github.com/rrelmy/dyndash#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
